@@ -1,1 +1,1 @@
-# Scrapping-IMDB-data-and-access-thorugh-API
+# Scrapping-IMDB-data-and-access-through-API
