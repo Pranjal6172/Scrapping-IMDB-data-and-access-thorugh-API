@@ -1,6 +1,8 @@
 import pymongo as pm
+#from pymongo import MongoClient
 from bs4 import BeautifulSoup
 import requests
+import json
 
 
 pages= 25                                                   #count pages
@@ -55,16 +57,19 @@ while(pages>0):
     pages=pages-1
         
 
-for ind in scraped_list:                                                        #accessing the list of dictionary
+for ind in scraped_list:
     print(ind['Index'],'-',ind['Movie_name'],'-',ind['Year'],'-',ind['Star_Cast'],'-',ind['Ratings'])
     print()
 
-
+#create json
+with open('scraped_list_of_movies', 'w') as fout:
+    json.dump(scraped_list , fout)
   
 print("All the Scrapping is completed")
 
+#connecting to Mongodb
 try: 
-    conn = pm.MongoClient()                                  #making connection to Client
+    conn = pm.MongoClient() 
     print("Connected successfully!!!") 
 except:   
     print("Could not connect to MongoDB") 
