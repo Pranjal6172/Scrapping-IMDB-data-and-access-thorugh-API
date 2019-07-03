@@ -54,7 +54,7 @@ while(pages>0):
     pages=pages-1
         
 
-for ind in scraped_list:
+for ind in scraped_list:                                                        #accessing the list of dictionary
     print(ind['Index'],'-',ind['Movie_name'],'-',ind['Year'],'-',ind['Star_Cast'],'-',ind['Ratings'])
     print()
 
