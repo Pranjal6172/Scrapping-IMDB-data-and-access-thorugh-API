@@ -61,3 +61,22 @@ for ind in scraped_list:                                                        
 
   
 print("All the Scrapping is completed")
+
+try: 
+    conn = pm.MongoClient()                                  #making connection to Client
+    print("Connected successfully!!!") 
+except:   
+    print("Could not connect to MongoDB") 
+  
+# database 
+db = conn.database 
+  
+# Created or Switched to collection names: IMDB_Collection 
+collection = db.IMDB_Collection
+
+for each_movie_record in scraped_list:
+    collection.insert_one(each_movie_record)
+    
+cursor = collection.find() 
+for record in cursor: 
+    print(record) 
