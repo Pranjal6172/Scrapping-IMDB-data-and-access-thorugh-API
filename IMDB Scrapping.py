@@ -56,10 +56,11 @@ while(pages>0):
         
     pages=pages-1
         
+#uncomment for print every value/ debugging
 
-for ind in scraped_list:
-    print(ind['Index'],'-',ind['Movie_name'],'-',ind['Year'],'-',ind['Star_Cast'],'-',ind['Ratings'])
-    print()
+#for ind in scraped_list:
+    #print(ind['Index'],'-',ind['Movie_name'],'-',ind['Year'],'-',ind['Star_Cast'],'-',ind['Ratings'])
+    #print()
 
 #create json
 with open('scraped_list_of_movies', 'w') as fout:
@@ -84,5 +85,6 @@ for each_movie_record in scraped_list:
     collection.insert_one(each_movie_record)
     
 cursor = collection.find() 
-for record in cursor: 
-    print(record) 
+for record in cursor:                               #for printing every dictionary 
+    print(record)
+    print()
