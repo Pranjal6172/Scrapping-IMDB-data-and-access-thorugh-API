@@ -85,7 +85,7 @@ body{
 <p><center>Search Movie with index:</center></p>
 
 
-<!--Make sure the form has the autocomplete function switched off:-->
+
 <form method="post" action="/movie" autocomplete="off">
   <div class="autocomplete" style="width:300px;">
     <input id="myInput" type="text" name="movie_name" placeholder="Movies">
@@ -191,10 +191,9 @@ function autocomplete(inp, arr) {
   });
 }
 
-/*An array containing all the country names in the world:*/
-var countries = d;
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), d);
 </script>
 </script>
